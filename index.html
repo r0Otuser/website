@@ -51,6 +51,10 @@
             cursor: pointer;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .button:hover {
@@ -67,30 +71,7 @@
             font-size: 18px;
             border-radius: 8px;
             cursor: pointer;
-            animation: moveRandomly 5s infinite linear;
-        }
-
-        @keyframes moveRandomly {
-            0% {
-                top: 0;
-                left: 0;
-            }
-            25% {
-                top: 0;
-                left: calc(100% - 200px);
-            }
-            50% {
-                top: calc(100% - 150px);
-                left: calc(100% - 200px);
-            }
-            75% {
-                top: calc(100% - 150px);
-                left: 0;
-            }
-            100% {
-                top: 0;
-                left: 0;
-            }
+            animation: none; /* Désactiver l'animation */
         }
     </style>
 </head>
@@ -99,8 +80,19 @@
         <h1>Aimez-vous les oranges ?</h1>
         <div class="button-container">
             <button class="button">Oui</button>
-            <button class="button no-button">NON</button>
+            <button class="button no-button" id="noButton">NON</button>
         </div>
     </div>
+
+    <script>
+        const noButton = document.getElementById("noButton");
+
+        noButton.addEventListener("mouseover", () => {
+            const randomX = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
 </body>
 </html>
