@@ -3,85 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emplois du Temps</title>
+    <title>Aimez-vous les oranges ?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+
+        .question-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
         }
-        .schedule {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .schedule th, .schedule td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .schedule th {
-            background-color: #f2f2f2;
-        }
-        .add-schedule-form {
+
+        .button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
         }
-        .add-schedule-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .add-schedule-form input[type="text"] {
-            width: calc(100% - 10px);
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-        .add-schedule-form input[type="submit"] {
-            background-color: #333;
-            color: #fff;
+
+        .button {
+            background-color: #4CAF50;
             border: none;
+            color: white;
             padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
             cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
-        .add-schedule-form input[type="submit"]:hover {
-            background-color: #555;
+
+        .button:hover {
+            transform: translateX(10px);
+        }
+
+        .no-button:hover {
+            animation: shake 0.3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Emplois du Temps</h1>
-    </header>
-    <div class="container">
-        <h2>Emplois du Temps de la Semaine</h2>
-        <table class="schedule">
-            <tr>
-                <th>Jour</th>
-                <th>Heure</th>
-                <th>Activité</th>
-            </tr>
-            <!-- Les données des emplois du temps seront insérées ici -->
-        </table>
-        <div class="add-schedule-form">
-            <h2>Ajouter un Emploi du Temps</h2>
-            <form>
-                <label for="day">Jour :</label>
-                <input type="text" id="day" name="day" placeholder="Lundi">
-                <label for="time">Heure :</label>
-                <input type="text" id="time" name="time" placeholder="08:00">
-                <label for="activity">Activité :</label>
-                <input type="text" id="activity" name="activity" placeholder="Réunion">
-                <input type="submit" value="Ajouter">
-            </form>
+    <div class="question-container">
+        <h1>Aimez-vous les oranges ?</h1>
+        <div class="button-container">
+            <button class="button">Oui</button>
+            <button class="button no-button" disabled>NON</button>
         </div>
     </div>
 </body>
