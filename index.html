@@ -10,13 +10,14 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            overflow: hidden;
         }
 
         .question-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
@@ -54,17 +55,41 @@
             transform: translateX(10px);
         }
 
-        .no-button:hover {
-            animation: shake 0.3s;
-            animation-iteration-count: infinite;
+        .no-button {
+            position: absolute;
+            background-color: #FF5733;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            animation: moveRandomly 5s infinite linear;
         }
 
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
+        @keyframes moveRandomly {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: 0;
+                left: calc(100% - 150px);
+            }
+            50% {
+                top: calc(100% - 100px);
+                left: calc(100% - 150px);
+            }
+            75% {
+                top: calc(100% - 100px);
+                left: 0;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
         }
     </style>
 </head>
@@ -73,7 +98,7 @@
         <h1>Aimez-vous les oranges ?</h1>
         <div class="button-container">
             <button class="button">Oui</button>
-            <button class="button no-button" disabled>NON</button>
+            <button class="button no-button">NON</button>
         </div>
     </div>
 </body>
