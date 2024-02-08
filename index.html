@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emplois du Temps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .schedule {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .schedule th, .schedule td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .schedule th {
+            background-color: #f2f2f2;
+        }
+        .add-schedule-form {
+            margin-top: 20px;
+        }
+        .add-schedule-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .add-schedule-form input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .add-schedule-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .add-schedule-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Emplois du Temps</h1>
+    </header>
+    <div class="container">
+        <h2>Emplois du Temps de la Semaine</h2>
+        <table class="schedule">
+            <tr>
+                <th>Jour</th>
+                <th>Heure</th>
+                <th>Activité</th>
+            </tr>
+            <!-- Les données des emplois du temps seront insérées ici -->
+        </table>
+        <div class="add-schedule-form">
+            <h2>Ajouter un Emploi du Temps</h2>
+            <form>
+                <label for="day">Jour :</label>
+                <input type="text" id="day" name="day" placeholder="Lundi">
+                <label for="time">Heure :</label>
+                <input type="text" id="time" name="time" placeholder="08:00">
+                <label for="activity">Activité :</label>
+                <input type="text" id="activity" name="activity" placeholder="Réunion">
+                <input type="submit" value="Ajouter">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
