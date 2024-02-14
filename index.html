@@ -80,22 +80,10 @@
 </head>
 <body>
     <div class="question-container">
-        <h1>Aimez-vous les oranges ?</h1>
-        <div class="button-container">
-            <button class="button">Oui</button>
-            <button class="button no-button" id="noButton">NON</button>
-        </div>
+        
     </div>
 
     <script>
-        const noButton = document.getElementById("noButton");
-
-        noButton.addEventListener("mouseover", () => {
-            const randomX = Math.random() * (window.innerWidth - noButton.clientWidth);
-            const randomY = Math.random() * (window.innerHeight - noButton.clientHeight);
-            noButton.style.left = `${randomX}px`;
-            noButton.style.top = `${randomY}px`;
-        });
         if (annyang) {
           // Add our commands to annyang
           annyang.addCommands({
@@ -110,7 +98,10 @@
         
           // Render KITT's interface
           SpeechKITT.vroom();
+          var speechButtonContainer = document.getElementById('question-container');
+          speechButtonContainer.appendChild(SpeechKITT.vroom());
         }
+        
     </script>
     
 </body>
